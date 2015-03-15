@@ -1,0 +1,51 @@
+@(message: String)
+
+@main("Vote no Livro!") {
+
+	<h2>Qual destes livros você gosta mais?</h2>
+
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="@routes.Assets.at("css/bootstrap.min.css")">
+<link rel="stylesheet" href="@routes.Assets.at("css/bootstrap-theme.min.css")">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="@routes.Assets.at("js/bootstrap.min.js")"></script>
+
+	
+<style type="text/css">
+    .bs-example{
+    	margin: 100px;
+    }
+</style>
+</head> 
+<body>
+<div class="bs-example">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="@routes.Assets.at("images/aguas_elefantes.jpg")" alt="Água para Elefante">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="@routes.Assets.at("images/a_cabana.jpeg")" alt="A Cabana">
+                </a>
+            </div>
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="@routes.Assets.at("images/cronicas_narnia.jpeg")" alt="As Crônicas de Narnia">
+                </a>
+            </div>    
+            <div class="col-xs-6 col-md-3">
+                <a href="#" class="thumbnail">
+                    <img src="@routes.Assets.at("images/images-a-menina.jpg")" alt="A Menina Que Roubava Livros">
+                </a>
+            </div>         
+        </div>
+    </div>
+</div>
+</body>
+}
+
