@@ -1,0 +1,23 @@
+@(livros: List[CadastraLivro])
+ 
+@main("Lista de Livros"){
+  @if(livros.isEmpty){
+    <h3>Não há livros cadastrados</h3>
+  } else {
+    <h3>Livros Cadastrados:</h3>
+    <table>
+      <tr>
+        <th>nome: </th>
+        <th>codigo: </th>
+      </tr>
+    @for(livro <- livros){
+      <tr>
+        <td>@livro.getNome() </td>
+        <td>@livro.getCodigo() </td>
+      </tr>
+    }
+    </table>
+  }
+  <hr>
+  <a href="@routes.Livros.formularioCadastraLivro">Novo livro</a>
+}

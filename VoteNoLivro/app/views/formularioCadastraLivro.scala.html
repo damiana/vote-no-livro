@@ -1,0 +1,10 @@
+@(formCadastra: Form[CadastraLivro])
+@import helper._
+ 
+@main("Cadastrar Livros") {
+  @helper.form(routes.Livros.cadastraLivro) {
+    @inputText(formCadastra("nome"), '_label -> "Nome do Livro")
+    @inputText(formCadastra("codigo"), '_label -> "Codigo")
+    <input type="submit" value="Criar Livro">
+  }
+}                              		

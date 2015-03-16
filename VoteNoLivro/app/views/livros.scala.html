@@ -18,11 +18,20 @@
     	margin: 100px;
     }
 </style>
+
+<script>
+$(document).ready(function(){
+    $("div.row div.col-xs-6").eq(0).click(function(){
+        alert("Selecionei esse");
+    });
+});
+</script>
+
 </head> 
 <body>
 <div class="bs-example">
     <div class="container">
-        <div class="row">
+        <div class="row" id="livros">
             <div class="col-xs-6 col-md-3">
                 <a href="#" class="thumbnail">
                     <img src="@routes.Assets.at("images/aguas_elefantes.jpg")" alt="Água para Elefante">
