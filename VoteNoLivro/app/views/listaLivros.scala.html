@@ -1,23 +1,50 @@
 @(livros: List[CadastraLivro])
  
 @main("Lista de Livros"){
+
+	<h2>Qual destes livros você gosta mais?</h2>
+<head>
+<meta charset="UTF-8">
+
+<link rel="stylesheet" href="@routes.Assets.at("css/bootstrap.min.css")">
+<link rel="stylesheet" href="@routes.Assets.at("css/bootstrap-theme.min.css")">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="@routes.Assets.at("js/bootstrap.min.js")"></script>
+
+	
+<style type="text/css">
+    .bs-example{
+    	margin: 100px;
+    }
+</style>
+
+<script>
+$(".bs-example .container #livros").ready(function(){
+
+    $("div.row div.col-xs-6").click(function(){
+        alert("Selecionei esse " + $("div.row div.col-xs-6").attr("id"));
+    });
+});
+</script>
+</head> 
+<body>
+
   @if(livros.isEmpty){
     <h3>Não há livros cadastrados</h3>
   } else {
-    <h3>Livros Cadastrados:</h3>
-    <table>
-      <tr>
-        <th>nome: </th>
-        <th>codigo: </th>
-      </tr>
-    @for(livro <- livros){
-      <tr>
-        <td>@livro.getNome() </td>
-        <td>@livro.getCodigo() </td>
-      </tr>
-    }
-    </table>
+  
+ 	<div class="bs-example">
+	    <div class="container">
+	        <div class="row" id="livros">
+	        @for(livro <- livros){
+	            <div class="col-xs-6 col-md-3" id=@livro.getCodigo()>
+	                <a href="#" class="thumbnail">
+	                    <img src="@routes.Assets.at("images/aguas_elefantes.jpg")" alt="@livro.getNome()">
+	                </a>
+	            </div>      
+	        }
+	        </div>
+	    </div>
+	</div> 
   }
-  <hr>
-  <a href="@routes.Livros.formularioCadastraLivro">Novo livro</a>
 }

@@ -1,0 +1,23 @@
+@(usuarios: List[CadastraUsuario])
+ 
+@main("Lista de Usuarios"){
+  @if(usuarios.isEmpty){
+    <h3>Não há usuarios cadastrados</h3>
+  } else {
+    <h3>Usuarios Cadastrados:</h3>
+    <table>
+      <tr>
+        <th>nome: </th>
+        <th>email: </th>
+      </tr>
+    @for(usuario <- usuarios){
+      <tr>
+        <td>@usuario.getNome() </td>
+        <td>@usuario.getEmail() </td>
+      </tr>
+    }
+    </table>
+  }
+  <hr>
+  <a href="@routes.UsuarioController.formularioCadastraUsuario">Novo Usuario</a>
+}

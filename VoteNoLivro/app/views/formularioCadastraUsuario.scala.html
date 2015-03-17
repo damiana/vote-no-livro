@@ -1,0 +1,10 @@
+@(formCadastra: Form[CadastraUsuario])
+@import helper._
+ 
+@main("Cadastrar Usuarios") {
+  @helper.form(routes.UsuarioController.cadastraUsuario) {
+    @inputText(formCadastra("nome"), '_label -> "Nome do Usuario")
+    @inputText(formCadastra("email"), '_label -> "Email")
+    <input type="submit" value="Criar novo Usuario">
+  }
+}                              		

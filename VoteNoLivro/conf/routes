@@ -8,6 +8,14 @@ GET		/livros						controllers.Livros.index()
 GET     /livros/novo             	controllers.Livros.formularioCadastraLivro()
 POST    /livros/novo             	controllers.Livros.cadastraLivro()
 
+# Paginas Usuarios
+GET     /livros/usuario        		controllers.UsuarioController.index()
+GET     /livros/usuario/novo        controllers.UsuarioController.formularioCadastraUsuario()
+POST    /livros/usuario/novo        controllers.UsuarioController.cadastraUsuario()
+
+# Paginas Votacao
+GET     /livros/votacao        		controllers.VotacaoController.index()
+
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

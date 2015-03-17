@@ -15,6 +15,10 @@ create table cadastra_usuario (
   email                     varchar(255))
 ;
 
+create table votacao_model (
+  id                        bigint)
+;
+
 
 
 
@@ -25,6 +29,8 @@ SET REFERENTIAL_INTEGRITY FALSE;
 drop table if exists cadastra_livro;
 
 drop table if exists cadastra_usuario;
+
+drop table if exists votacao_model;
 
 SET REFERENTIAL_INTEGRITY TRUE;
 

@@ -1,0 +1,22 @@
+@(votos: List[VotacaoModel])
+ 
+@main("Lista de votos"){
+  @if(votos.isEmpty){
+    <h3>Não há votacao </h3>
+  } else {
+    <h3>Votacao:</h3>
+    <table>
+      <tr>
+        <th>Usuario: </th>
+        <th>Codigo Livro: </th>
+      </tr>
+    @for(voto <- votos){
+      <tr>
+        <td>@voto.getNomeUsuario() </td>
+        <td>@voto.getCodigoLivro() </td>
+      </tr>
+    }
+    </table>
+  }
+  <hr>
+}
